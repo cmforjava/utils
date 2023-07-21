@@ -1,7 +1,7 @@
 // ==UserScript==
-// @name         全网弹幕
-// @namespace    MIOdanmaku
-// @version      3.1.1
+// @name         手机弹幕
+// @namespace    MIOdanmaku-phone
+// @version      0.0.1
 // @description  添加弹幕功能
 // @resource css https://lib.baomitu.com/dplayer/1.25.0/DPlayer.min.css
 // @author       MIO
@@ -15207,7 +15207,7 @@ function BrotliDecodeClosure(){"use strict";function e(e){this.data=e,this.offse
 
 
 
-    
+
     function isDesktop() {
       const userAgent = window.navigator.userAgent
       const keywords = ['Windows', 'Macintosh', 'Linux'] // 包含电脑的关键词
