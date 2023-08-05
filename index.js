@@ -43,7 +43,24 @@
 // @grant        GM_xmlhttpRequest
 // @grant        unsafeWindow
 // ==/UserScript==
-
+try {
+  if (!GM_addValueChangeListener) {
+    var GM_addValueChangeListener = async (name, func) => {
+      let oldValue = GM_getValue(name)
+      return setInterval(async () => {
+        let newValue = GM_getValue(name)
+        if (newValue != oldValue) {
+          func(name, oldValue, newValue)
+        }
+      }, 1000);
+    }
+    var GM_removeValueChangeListener = (listenerId) => {
+      clearInterval(listenerId)
+    }
+  }
+} catch (error) {
+  
+}
 let format = (second) => {
   if (!/^\d+$/.test(second)) {
     return second
